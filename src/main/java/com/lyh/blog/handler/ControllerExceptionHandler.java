@@ -22,7 +22,7 @@ public class ControllerExceptionHandler {
     //配置Exception级别的异常
     @ExceptionHandler(Exception.class)
     //返回错误页面
-    public ModelAndView exceptionHander(HttpServletRequest request,Exception e){
+    public ModelAndView exceptionHandler(HttpServletRequest request,Exception e){
 
         logger.error("Request URL : {},Exception : {}",request.getRequestURL());
 

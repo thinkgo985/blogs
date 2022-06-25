@@ -27,9 +27,11 @@ public class ControllerExceptionHandler {
         logger.error("Request URL : {},Exception : {}",request.getRequestURL());
 
         ModelAndView mv = new ModelAndView();
+        //获取前端页面URL
         mv.addObject("url",request.getRequestURL());
         mv.addObject("exception",e);
         mv.setViewName("error/error");
-        return null;
+        return mv;
     }
+
 }

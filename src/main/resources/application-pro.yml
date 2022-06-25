@@ -1,0 +1,26 @@
+#生产环境production
+#配置Thymeleaf
+spring:
+  #配置数据库
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/blog?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: root
+  #ddl-auto 更新表结构设置 默认为：none。当生产环境中实体类确定好后改为none
+  #create 慎用每次启动会自动创建
+  #show-sql 输出到控制台
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+#spring 默认使用logback
+#root 默认info，设置更高级别将root调整为warn提示警告错误等问题
+logging:
+  level:
+    root: warn
+    com.lyh.blog: info
+  #  file: log/blog-pro.blog
+
+server:
+  port: 8081
